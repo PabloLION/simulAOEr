@@ -20,9 +20,23 @@
 
 Classes:
 
+- #TODO: User mermaid for diagram
+
+- Simulator
+  - Match (of class Map)
+  - Engine (of class Engine)
+- Match
+  - map (of class Map)
+  - players (of list of class Player)
+- Engine
+  - UnitType (of class UnitType)
+  - Unit (of class Unit)
+  - Maybe we just implement OpenAge.
 - Map
   - Wood line distance
   - Gold pile distance
+  - Building distance
+  - Common strategy
 - Player
   - Resources
   - Technology (of class TechTree)
@@ -49,4 +63,4 @@ Classes:
 - recs for training AI
 - data mods [SiegeEngineers/auto-mods](https://github.com/SiegeEngineers/auto-mods)
 - tech data [SiegeEngineers/halfon](https://github.com/SiegeEngineers/halfon/)
-- more simulation with [openage](https://blog.openage.dev/), [repo](https://github.com/SFTtech/openage) or [CaptureAge](https://captureage.com/) for metrics for AI.
+- more simulation with [OpenAge](https://blog.openage.dev/), [repo](https://github.com/SFTtech/openage) or [CaptureAge](https://captureage.com/) for metrics for AI.
