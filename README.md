@@ -6,7 +6,7 @@
   - What's the best strategy for civ-s vs civ-s.
   - What's the best play style for certain civ-s on a certain map.
   - Maybe use AI, but need metrics (hard to evaluate).
-  - Maybe use the
+  - Maybe more simulation for battle field simulation.
 
 ## Docs
 
