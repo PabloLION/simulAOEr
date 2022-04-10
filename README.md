@@ -34,9 +34,11 @@ classDiagram
   class UI{
     Int Tick_ms
     ?? queue: Production and research
-    ?? Players' current belongings: resources, relics, units
-    ?? GUI: show the UI with graphic
+    ?? Players
+    ?? GUI
   }
+  %% Players: Players' current belongings like resources, relics, units
+  %% GUI : show the UI with graphic
   Simulator o-- Match
   class Match {
     Map map
@@ -44,15 +46,18 @@ classDiagram
   }
   Simulator o-- Engine
   class Engine {
-    Int game_time %% in game time, speed wont affect
-    Float game_speed %% need to give player some time to react and micro, like putting the first houses
-    Unit[] units %% including herdables, gold piles, buildings
+    Int game_time
+    Float game_speed
+    Unit[] units
     OpenAge ?open_age
   }
+  %% game_time: in game time, speed wont affect
+  %% game_speed: need to give player some real world time to react and micro, like putting the first houses
   Engine o-- Unit
   class Unit {
     UnitType unit_type
   }
+  %% Unit includes herdables, gold piles, buildings
   Unit *-- UnitType
   class UnitType {
     <<enumeration>>
@@ -65,9 +70,10 @@ classDiagram
   Match o-- Map
   class Map {
     Str name
-    RMS rms_plan %% RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance
+    RMS rms_plan
     BuildOrder common_bo
   }
+  %% RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance
   Map o-- BuildOrder
   class BuildOrder {
     Str id
@@ -77,12 +83,14 @@ classDiagram
   }
   Match o-- Player
   class Player {
-    Resources %% Population
-    belongings %% Villager, Trading Unit, units, Relic number
+    Resources
+    belongings
     TechTree tech_tree
-    Civ
+    Civ civ
     Bonus team_bonus
   }
+  %% Resources: includes Population
+  %% belongings: Villager, Trading Unit, units, Relic number
   Player o-- Civ
   class Civ {
     Int id
