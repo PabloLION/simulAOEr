@@ -44,9 +44,9 @@ classDiagram
   }
   Simulator o-- Engine
   class Engine {
-    Int game_time <!-- in game time, speed wont affect -->
-    Float game_speed <!-- need to give player some time to react and micro, like putting the first houses -->
-    Unit[] units <!-- including herdables, gold piles, buildings -->
+    Int game_time %% in game time, speed wont affect
+    Float game_speed %% need to give player some time to react and micro, like putting the first houses
+    Unit[] units %% including herdables, gold piles, buildings
     OpenAge ?open_age
   }
   Engine o-- Unit
@@ -65,7 +65,7 @@ classDiagram
   Match o-- Map
   class Map {
     Str name
-    RMS rms_plan <!-- RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance -->
+    RMS rms_plan %% RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance
     BuildOrder common_bo
   }
   Map o-- BuildOrder
@@ -77,8 +77,8 @@ classDiagram
   }
   Match o-- Player
   class Player {
-    Resources <!-- Population -->
-    belongings <!-- Villager, Trading Unit, units, Relic number -->
+    Resources %% Population
+    belongings %% Villager, Trading Unit, units, Relic number
     TechTree tech_tree
     Civ
     Bonus team_bonus
