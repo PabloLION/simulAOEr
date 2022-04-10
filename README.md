@@ -22,6 +22,51 @@ Classes:
 
 - #TODO: User mermaid for diagram
 
+```mermaid
+graph
+    A[Simulator] --> A1[Match - of class Map]
+    A --> A2[Engine - of class Engine]
+    A --> A3[UI - of class UI]
+    A --> A4[BO]
+
+    A1 --> B[Map - of class Map]
+    A1 --> B1[Players - of list of class Player]
+
+    B --> BB[Woodline Distance]
+    B--> BB1[Gold Pile Distance]
+    B--> BB2[Building Distance]
+    B--> BB3[Common Strategy]
+
+    A2 --> C[Game Time - in game time, speed wont affect]
+    A2 --> C1[Game Speed - need to give player some time to react and micro, like putting the first houses]
+    A2 --> C2[Unit Type - of class UnitType]
+    A2 --> C3[Unit - of class Unit]
+
+    A3 --> D[Production and Research Queue]
+    A3 --> D1[Player's Current Belongings - including resources, relics, army]
+    A3 --> D2[GUI - show the UI with graphic]
+
+    D1 --> DD[Resources]
+    D1 --> DD1[Population]
+    D1 --> DD2[Villager]
+    D1 --> DD3[Trading unit]
+    D1 --> DD4[Army]
+    D1 --> DD5[Relic]
+    D1 --> DD6[Technology - of class TechTree]
+    D1 --> DD7[Civ - of class civ]
+    D1 --> DD8[Bonus - from team]
+
+    DD7 --> DDD[Civ Bonus]
+    DD7 --> DDD1[Tech Tree - of class TechTree]
+    DDD1 --> a[Unit or Tech availability - also add a researched for user]
+
+    A4 --> E[Steps]
+    A4 --> E1[Steps with Text]
+    A4 --> E2[Goal]
+    A4 --> E3[Task Queue]
+
+```
+
 - Simulator
   - Match (of class Map)
   - Engine (of class Engine)
