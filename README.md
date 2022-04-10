@@ -23,97 +23,83 @@ Classes:
 - #TODO: User mermaid for diagram
 
 ```mermaid
-graph
-    A[Simulator] --> A1[Match - of class Map]
-    A --> A2[Engine - of class Engine]
-    A --> A3[UI - of class UI]
-    A --> A4[BO]
-
-    A1 --> B[Map - of class Map]
-    A1 --> B1[Players - of list of class Player]
-
-    B --> BB[Woodline Distance]
-    B--> BB1[Gold Pile Distance]
-    B--> BB2[Building Distance]
-    B--> BB3[Common Strategy]
-
-    A2 --> C[Game Time - in game time, speed wont affect]
-    A2 --> C1[Game Speed - need to give player some time to react and micro, like putting the first houses]
-    A2 --> C2[Unit Type - of class UnitType]
-    A2 --> C3[Unit - of class Unit]
-
-    A3 --> D[Production and Research Queue]
-    A3 --> D1[Player's Current Belongings - including resources, relics, army]
-    A3 --> D2[GUI - show the UI with graphic]
-
-    D1 --> DD[Resources]
-    D1 --> DD1[Population]
-    D1 --> DD2[Villager]
-    D1 --> DD3[Trading unit]
-    D1 --> DD4[Army]
-    D1 --> DD5[Relic]
-    D1 --> DD6[Technology - of class TechTree]
-    D1 --> DD7[Civ - of class civ]
-    D1 --> DD8[Bonus - from team]
-
-    DD7 --> DDD[Civ Bonus]
-    DD7 --> DDD1[Tech Tree - of class TechTree]
-    DDD1 --> a[Unit or Tech availability - also add a researched for user]
-
-    A4 --> E[Steps]
-    A4 --> E1[Steps with Text]
-    A4 --> E2[Goal]
-    A4 --> E3[Task Queue]
+classDiagram
+  class Simulator {
+    Match match
+    Engine engine
+    UI ui
+    BuildOrder (move to player)
+  }
+  Simulator o-- UI
+  class UI{
+    Int Tick_ms
+    ?? queue: Production and research
+    ?? Players' current belongings: resources, relics, units
+    ?? GUI: show the UI with graphic
+  }
+  Simulator o-- Match
+  class Match {
+    Map map
+    Player[] players
+  }
+  Simulator o-- Engine
+  class Engine {
+    Int game_time <!-- in game time, speed wont affect -->
+    Float game_speed <!-- need to give player some time to react and micro, like putting the first houses -->
+    Unit[] units <!-- including herdables, gold piles, buildings -->
+    OpenAge ?open_age
+  }
+  Engine o-- Unit
+  class Unit {
+    UnitType unit_type
+  }
+  Unit *-- UnitType
+  class UnitType {
+    <<enumeration>>
+    ECO_TRADE
+    ECO_VILLAGER
+    ECO_FEITORIA
+    ARMY...
+    GAIA...
+  }
+  Match o-- Map
+  class Map {
+    Str name
+    RMS rms_plan <!-- RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance -->
+    BuildOrder common_bo
+  }
+  Map o-- BuildOrder
+  class BuildOrder {
+    Str id
+    Str name
+    Str description
+    Dict[str,??] task_queue
+  }
+  Match o-- Player
+  class Player {
+    Resources <!-- Population -->
+    belongings <!-- Villager, Trading Unit, units, Relic number -->
+    TechTree tech_tree
+    Civ
+    Bonus team_bonus
+  }
+  Player o-- Civ
+  class Civ {
+    Int id
+    Str name
+    Str description
+    BuildOrder common_bo
+  }
+  Civ o-- TechTree
+  Player o-- TechTree
+  class TechTree {
+    Int civ_id
+    Str civ_name
+    Tech[] available_techs
+    Tech[] researched_techs
+  }
 
 ```
-
-- Simulator
-  - Match (of class Map)
-  - Engine (of class Engine)
-  - UI (of class UI)
-  - BuildOrder
-- BuildOrder
-  - id
-  - name
-  - task queue
-- UI
-  - Tic
-  - Production and research queue
-  - Players' current belongings (including resources, relics, army)
-  - GUI (show the UI with graphic)
-- Match
-  - map (of class Map)
-  - players (of list of class Player)
-- Engine
-  - Game time (in game time, speed wont affect)
-  - Game speed (need to give player some time to react and micro, like putting the first houses)
-  - UnitType (of class UnitType)
-  - Unit (of class Unit)
-  - Maybe we just implement OpenAge.
-- Map
-  - Wood line distance
-  - Gold pile distance
-  - Building distance
-  - Common strategy
-- Player (belongings)
-  - Resources
-  - Population
-  - Villager
-  - Trading Unit
-  - Army
-  - Relic
-  - Technology (of class TechTree)
-  - Civ (of class civ)
-  - Bonus (from team)
-- Civ
-  - Civ Bonus
-  - Tech Tree (of class TechTree)
-- Tech Tree
-  - Unit/tech availability (also add a researched for user)
-- Build Order
-  - Steps
-  - Steps with text
-  - Goal
 
 ### stack
 
