@@ -107,53 +107,92 @@ classDiagram
 
 ```
 
-- Simulator
-  - Match (of class Map)
-  - Engine (of class Engine)
-  - UI (of class UI)
-  - BuildOrder
-- BuildOrder
-  - id
-  - name
-  - task queue
-- UI
-  - Tic
-  - Production and research queue
-  - Players' current belongings (including resources, relics, army)
-  - GUI (show the UI with graphic)
-- Match
-  - map (of class Map)
-  - players (of list of class Player)
-- Engine
-  - Game time (in game time, speed wont affect)
-  - Game speed (need to give player some time to react and micro, like putting the first houses)
-  - UnitType (of class UnitType)
-  - Unit (of class Unit)
-  - Maybe we just implement OpenAge.
-- Map
-  - Wood line distance
-  - Gold pile distance
-  - Building distance
-  - Common strategy
-- Player (belongings)
-  - Resources
-  - Population
-  - Villager
-  - Trading Unit
-  - Army
-  - Relic
-  - Technology (of class TechTree)
-  - Civ (of class civ)
-  - Bonus (from team)
-- Civ
-  - Civ Bonus
-  - Tech Tree (of class TechTree)
-- Tech Tree
-  - Unit/tech availability (also add a researched for user)
-- Build Order
-  - Steps
-  - Steps with text
-  - Goal
+```mermaid
+classDiagram
+  class Simulator {
+    Match match
+    Engine engine
+    UI ui
+    BuildOrder (move to player)
+  }
+  Simulator o-- UI
+  class UI{
+    Int Tick_ms
+    ?? queue: Production and research
+    ?? Players
+    ?? GUI
+  }
+  %% Players: Players' current belongings like resources, relics, units
+  %% GUI : show the UI with graphic
+  Simulator o-- Match
+  class Match {
+    Map map
+    Player[] players
+  }
+  Simulator o-- Engine
+  class Engine {
+    Int game_time
+    Float game_speed
+    Unit[] units
+    OpenAge ?open_age
+  }
+  %% game_time: in game time, speed wont affect
+  %% game_speed: need to give player some real world time to react and micro, like putting the first houses
+  Engine o-- Unit
+  class Unit {
+    UnitType unit_type
+  }
+  %% Unit includes herdables, gold piles, buildings
+  Unit *-- UnitType
+  class UnitType {
+    <<enumeration>>
+    ECO_TRADE
+    ECO_VILLAGER
+    ECO_FEITORIA
+    ARMY...
+    GAIA...
+  }
+  Match o-- Map
+  class Map {
+    Str name
+    RMS rms_plan
+    BuildOrder common_bo
+  }
+  %% RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance
+  Map o-- BuildOrder
+  class BuildOrder {
+    Str id
+    Str name
+    Str description
+    Dict[str,??] task_queue
+  }
+  Match o-- Player
+  class Player {
+    Resources
+    belongings
+    TechTree tech_tree
+    Civ civ
+    Bonus team_bonus
+  }
+  %% Resources: includes Population
+  %% belongings: Villager, Trading Unit, units, Relic number
+  Player o-- Civ
+  class Civ {
+    Int id
+    Str name
+    Str description
+    BuildOrder common_bo
+  }
+  Civ o-- TechTree
+  Player o-- TechTree
+  class TechTree {
+    Int civ_id
+    Str civ_name
+    Tech[] available_techs
+    Tech[] researched_techs
+  }
+
+```
 
 ### stack
 
