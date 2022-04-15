@@ -19,60 +19,92 @@
 ### Design Docs
 
 Classes:
+```mermaid
+classDiagram
+  class Simulator {
+    Match match
+    Engine engine
+    UI ui
+    BuildOrder (move to player)
+  }
+  Simulator o-- UI
+  class UI{
+    Int Tick_ms
+    ?? queue: Production and research
+    ?? Players
+    ?? GUI
+  }
+  %% Players: Players' current belongings like resources, relics, units
+  %% GUI : show the UI with graphic
+  Simulator o-- Match
+  class Match {
+    Map map
+    Player[] players
+  }
+  Simulator o-- Engine
+  class Engine {
+    Int game_time
+    Float game_speed
+    Unit[] units
+    OpenAge ?open_age
+  }
+  %% game_time: in game time, speed wont affect
+  %% game_speed: need to give player some real world time to react and micro, like putting the first houses
+  Engine o-- Unit
+  class Unit {
+    UnitType unit_type
+  }
+  %% Unit includes herdables, gold piles, buildings
+  Unit *-- UnitType
+  class UnitType {
+    <<enumeration>>
+    ECO_TRADE
+    ECO_VILLAGER
+    ECO_FEITORIA
+    ARMY...
+    GAIA...
+  }
+  Match o-- Map
+  class Map {
+    Str name
+    RMS rms_plan
+    BuildOrder common_bo
+  }
+  %% RMS is a map generator, this can include Wood line distance, Gold pile distance, Building distance
+  Map o-- BuildOrder
+  class BuildOrder {
+    Str id
+    Str name
+    Str description
+    Dict[str,??] task_queue
+  }
+  Match o-- Player
+  class Player {
+    Resources
+    belongings
+    TechTree tech_tree
+    Civ civ
+    Bonus team_bonus
+  }
+  %% Resources: includes Population
+  %% belongings: Villager, Trading Unit, units, Relic number
+  Player o-- Civ
+  class Civ {
+    Int id
+    Str name
+    Str description
+    BuildOrder common_bo
+  }
+  Civ o-- TechTree
+  Player o-- TechTree
+  class TechTree {
+    Int civ_id
+    Str civ_name
+    Tech[] available_techs
+    Tech[] researched_techs
+  }
 
-- #TODO: User mermaid for diagram
-
-[![](https://mermaid.ink/img/pako:eNp9lD1v2zAQhv_KQUsXe5CdNkWGApYVBBmCprHTDrQHlqIlIhQp8MOpEeS_90jKH1KRepF59-j43vGl3jKmK57dZLWhXQMbBfhbkJVovaROmy1Mp99gkZMH6lgDU9A7YJJaCw-02_Z4YmbkVtVC8UsoRYbcnDzfXzLP98P8FSm-Y6SP5TFY4P7dB7v3RE4eJT1wYxMmhXVnPKVOVYv0SkF-aV3JoLlEnCp2lFqkfE7utKzgUciPiBkpvJCVUPUHwJwsddtqBStnqOP14dzaLKpYkjvacliLNkxOKKjD0uFyArbjvIJXrRzQ3Y4ztx2-mqd3VxGbggoPp6EWew5dbBms7quFhOGUYSlVQSuY0ROc0guS3rnQgGs47ITBuTXaW25Hm83IsxIO1oducMQhGGIjep7oEXhufh6xkjwaXXnmBE4o6HrillODTvvhuT_V7OHjEX-ysPTGcBxLwaUOHqttHB6TPp6F4VZ7w7id4F8pGD6paQ-jejNyF61oG_0au8fVq3ANxMsg2EltmTxWluTpWHg7yqA23YU7g52MczPyU0hJ6-jAQWZO1oZGxT5NZ5C9Iouz6FP0M4qQUdwg_IWsOWuUlro-XI49RNeG8zF_TZZifwkysR8zX0mhlQ-j3RndguO0Pc-kvO6pMlaK5PafXB5lQVDwP1VlvydNttEmEkD3VEj6W0jhQlNUWg20qoCGE45GQcfvkEa_nq_34irWuiUrx7uTjftgnqLpoNf8jxvl0RSaylEQz4nal5MpNyqbZC03LRUVfjvfArzJ0EEt32Q3-Lei5mWTbdQ7cr6r8OLfVgI_p9mNM55PMuqdXh0UO64TUwqKzmtT8P0vbea19Q)](https://mermaid.live/edit#pako:eNp9lD1v2zAQhv_KQUsXe5CdNkWGApYVBBmCprHTDrQHlqIlIhQp8MOpEeS_90jKH1KRepF59-j43vGl3jKmK57dZLWhXQMbBfhbkJVovaROmy1Mp99gkZMH6lgDU9A7YJJaCw-02_Z4YmbkVtVC8UsoRYbcnDzfXzLP98P8FSm-Y6SP5TFY4P7dB7v3RE4eJT1wYxMmhXVnPKVOVYv0SkF-aV3JoLlEnCp2lFqkfE7utKzgUciPiBkpvJCVUPUHwJwsddtqBStnqOP14dzaLKpYkjvacliLNkxOKKjD0uFyArbjvIJXrRzQ3Y4ztx2-mqd3VxGbggoPp6EWew5dbBms7quFhOGUYSlVQSuY0ROc0guS3rnQgGs47ITBuTXaW25Hm83IsxIO1oducMQhGGIjep7oEXhufh6xkjwaXXnmBE4o6HrillODTvvhuT_V7OHjEX-ysPTGcBxLwaUOHqttHB6TPp6F4VZ7w7id4F8pGD6paQ-jejNyF61oG_0au8fVq3ANxMsg2EltmTxWluTpWHg7yqA23YU7g52MczPyU0hJ6-jAQWZO1oZGxT5NZ5C9Iouz6FP0M4qQUdwg_IWsOWuUlro-XI49RNeG8zF_TZZifwkysR8zX0mhlQ-j3RndguO0Pc-kvO6pMlaK5PafXB5lQVDwP1VlvydNttEmEkD3VEj6W0jhQlNUWg20qoCGE45GQcfvkEa_nq_34irWuiUrx7uTjftgnqLpoNf8jxvl0RSaylEQz4nal5MpNyqbZC03LRUVfjvfArzJ0EEt32Q3-Lei5mWTbdQ7cr6r8OLfVgI_p9mNM55PMuqdXh0UO64TUwqKzmtT8P0vbea19Q)
-
-* Diagram looks shirt
-
-- Simulator
-  - Match (of class Map)
-  - Engine (of class Engine)
-  - UI (of class UI)
-  - BuildOrder
-- BuildOrder
-  - id
-  - name
-  - task queue
-- UI
-  - Tic
-  - Production and research queue
-  - Players' current belongings (including resources, relics, army)
-  - GUI (show the UI with graphic)
-- Match
-  - map (of class Map)
-  - players (of list of class Player)
-- Engine
-  - Game time (in game time, speed wont affect)
-  - Game speed (need to give player some time to react and micro, like putting the first houses)
-  - UnitType (of class UnitType)
-  - Unit (of class Unit)
-  - Maybe we just implement OpenAge.
-- Map
-  - Wood line distance
-  - Gold pile distance
-  - Building distance
-  - Common strategy
-- Player (belongings)
-  - Resources
-  - Population
-  - Villager
-  - Trading Unit
-  - Army
-  - Relic
-  - Technology (of class TechTree)
-  - Civ (of class civ)
-  - Bonus (from team)
-- Civ
-  - Civ Bonus
-  - Tech Tree (of class TechTree)
-- Tech Tree
-  - Unit/tech availability (also add a researched for user)
-- Build Order
-  - Steps
-  - Steps with text
-  - Goal
+```
 
 ### stack
 
