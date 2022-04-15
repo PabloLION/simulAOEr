@@ -1,4 +1,5 @@
 Commonly used abbreviations within AoE2 players' conversation:
+--------------------------------------------------------------
 
 | Abbreviation 	| Meaning 	|
 |-------------:	|--------:	|
@@ -116,9 +117,9 @@ Imperial Age:
 | CR          	| Crop Rotation |
 | 2MS          	| Two-Man Saw   |
 
------------------------------------------
 
 Civilization abbreviations:
+---------------------------
 
 | Abbreviation 	| Meaning 	|
 |-------------:	|--------:	|
