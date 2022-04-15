@@ -1,4 +1,5 @@
 List of most commonly used taunts:
+----------------------------------
 
 | Taunt 	| Meaning 	|
 |-------------:	|--------:	|
@@ -8,6 +9,8 @@ List of most commonly used taunts:
 
 
 List of other taunts:
+---------------------
+
 | Taunt Number	| Meaning 	|
 |-------------:	|--------:	|
 | 1             | Yes.          |
