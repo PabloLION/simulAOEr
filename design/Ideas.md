@@ -9,3 +9,6 @@
 6. A function to sim a fight based of a tempo perspective, if its a good idea to fight a halb w/ pala if we get to raid their eco or gain a map control.
 7. A function to sim a micro difference in a fight.
 8. A function to sim a monk value how much of a diff a monk does in battle and enemy psychology.
+
+laimao 
+> laimao
