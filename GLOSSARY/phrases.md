@@ -9,7 +9,6 @@ Commonly used abbreviations within AoE2 players' conversation:
 | strat        	| Strategy      |
 | tech        	| Technology    |
 | trade         | Trade Carts/Cogs |
-| TC        	| Town Centre   |
 | inf           | Infantry      |
 | cav           | Cavalry       |
 | ele           | Elephant      |
@@ -22,8 +21,9 @@ Commonly used abbreviations within AoE2 players' conversation:
 | sX          	| Siege         |
 | RM          	| Random Map    |
 | DM          	| Deathmatch    |
-| doctor Pipis  | Byzantine Monk|
-
+| doctor Pipis  | a Monk with Byzantine Team Bonus|
+| CB            | Civilization Bonus|
+| TB            | Team Bonus    |
 
 Lists of abbreviations in each age:
 -----------------------------------
@@ -70,11 +70,11 @@ Castle Age:
 | SSM          	| Stone Shaft Mining |
 | Hc          	| Handcart      |
 | LC        	| Light Cavalry |
-| kts        	| Knights       |
+| kt        	| Knight        |
 | SL          	| Steppe Lancer |
-| BE        	| Battle Ele    |
+| BE        	| Battle Elephant    |
 | xbow      	| Crossbowman   |
-| ca        	| Cavalry Archer|
+| CA        	| Cavalry Archer|
 | TR          	| Thumb Ring    |
 | LS      	| Longswordsman |
 | pike          | Pikemen       |
@@ -148,6 +148,7 @@ Civilization abbreviations:
 | Mag           | The Magyars   |
 | Mly      	| The Malay     |
 | Mal           | The Malians   |
+| May or maya   | The Mayans    |
 | Mon        	| The Mongols   |
 | Per          	| The Persians  |
 | Pol or Pole   | The Poles  	|
