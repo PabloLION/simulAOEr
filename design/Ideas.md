@@ -1,3 +1,6 @@
+
+# Ideas to add to the project
+
 1. A function to sim and calc a cost effectiveness of a fight.
 2. A function by which we determine best civ comp and strat based of a selected map.
 3. A function to sim vills needed based of cost, unit training time and vill gather rates.
