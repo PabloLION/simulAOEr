@@ -8,7 +8,7 @@ Commonly used abbreviations within AoE2 players' conversation:
 | civ           | Civilization  |
 | strat        	| Strategy      |
 | tech        	| Technology    |
-| trade         | Trade Carts/Cogs |
+| trade         | Trade Carts/Trade Cogs |
 | inf           | Infantry      |
 | cav           | Cavalry       |
 | ele           | Elephant      |
@@ -16,9 +16,9 @@ Commonly used abbreviations within AoE2 players' conversation:
 | feudal        | Feudal Age    |
 | castle        | Castle Age    |
 | imp           | Imperial Age  |
-| eX       	| Elite         |
-| hX          	| Heavy         |
-| sX          	| Siege         |
+| e X       	| Elite         |
+| h X          	| Heavy         |
+| s X          	| Siege         |
 | RM          	| Random Map    |
 | DM          	| Deathmatch    |
 | doctor Pipis  | a Monk with Byzantine Team Bonus|
@@ -63,7 +63,7 @@ Castle Age:
 | Abbreviation 	| Meaning |
 |:-------------:|:--------: |
 | FC            | Fast Castle   |
-| boom          | Making 2 or more extra TCs |
+| boom          | Making 2 or more extra Town Centers |
 | Bs          	| Bowsaw        |
 | HP          	| Heavy Plow    |
 | GSM          	| Gold Shaft Mining |
@@ -84,7 +84,7 @@ Castle Age:
 | ST      	| Siege Tower   |
 | CD          	| Castle Drop   |
 | UU          	| Unique Unit   |
-| UT          	| Unique Tech   |
+| UT          	| Unique Technology   |
 | smush       	| Siege Monk Rush|
 | FW          	| Fortified Wall|
 | GT          	| Guard Tower   |
