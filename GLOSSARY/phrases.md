@@ -1,8 +1,8 @@
 Commonly used abbreviations within AoE2 players' conversation:
 --------------------------------------------------------------
 
-| Abbreviation 	| Meaning 	|
-|-------------:	|--------:	|
+| Abbreviation 	| Meaning|
+|-------------:	|--------:|
 | BO          	| Build Order   |
 | pop      	| Population   	|
 | civ           | Civilization  |
@@ -30,8 +30,8 @@ Lists of abbreviations in each age:
 
 Dark Age:
 
-| Abbreviation 	| Meaning 	|
-|-------------:	|--------:	|
+| Abbreviation 	| Meaning |
+|-------------:	|--------:|
 | vill          | Villager      |
 | TC        	| Town Centre   |
 | LC            | Lumber Camp   |
@@ -41,7 +41,7 @@ Dark Age:
 
 Feudal Age:
 
-| Abbreviation 	| Meaning 	|
+| Abbreviation 	| Meaning |
 |-------------:	|--------:	|
 | FF            | Fast Feudal   |
 | arch          | Archer        |
@@ -60,8 +60,8 @@ Feudal Age:
 
 Castle Age:
 
-| Abbreviation 	| Meaning 	|
-|-------------:	|--------:	|
+| Abbreviation 	| Meaning |
+|-------------:	|--------:|
 | FC            | Fast Castle   |
 | boom          | Making 2 or more extra TCs |
 | Bs          	| Bowsaw        |
@@ -91,8 +91,8 @@ Castle Age:
 
 Imperial Age:
 
-| Abbreviation 	| Meaning 	|
-|-------------:	|--------:	|
+| Abbreviation 	| Meaning |
+|-------------:	|--------:|
 | FI            | Fast Imperial |
 | GP        	| Gunpowder     |
 | arb          	| Arbalester    |
@@ -121,8 +121,8 @@ Imperial Age:
 Civilization abbreviations:
 ---------------------------
 
-| Abbreviation 	| Meaning 	|
-|-------------:	|--------:	|
+| Abbreviation 	| Meaning |
+|-------------:	|--------:|
 | Az or Aztek   | The Aztecs    |
 | Ber        	| The Berbers   |
 | Boh          	| The Bohemians |

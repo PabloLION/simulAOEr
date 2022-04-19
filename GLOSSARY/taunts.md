@@ -11,8 +11,8 @@ List of most commonly used taunts:
 List of other taunts:
 ---------------------
 
-| Taunt Number	| Meaning 	|
-|-------------:	|--------:	|
+| Taunt Number	| Meaning |
+|-------------:	|--------:|
 | 1             | Yes.          |
 | 2        	| No.           |
 | 3          	| Food please.  |
@@ -35,7 +35,7 @@ List of other taunts:
 | 20        	| My granny could scrap better than that.|
 | 21          	| Nice town, I'll take it.  |
 | 22            | Quit touching me!|
-| 23        	Raiding party!No            |
+| 23        	| Raiding party!         |
 | 24          	| Dadgum.       |
 | 25            | Eh, smite me. |
 | 26        	| The wonder, the wonder, the... no!|
