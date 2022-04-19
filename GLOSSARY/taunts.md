@@ -1,8 +1,8 @@
 List of most commonly used taunts:
 ----------------------------------
 
-| Taunt 	| Meaning 	|
-|-------------:	|--------:	|
+| Taunt Number 	| Meaning 	|
+|:-------------:|--------:	|
 | 1             | Yes           |
 | 2        	| No            |
 | 11          	| (herb laugh)  |
@@ -12,7 +12,7 @@ List of other taunts:
 ---------------------
 
 | Taunt Number	| Meaning |
-|-------------:	|:--------:|
+|:-------------:|:--------:|
 | 1             | Yes.          |
 | 2        	| No.           |
 | 3          	| Food please.  |
