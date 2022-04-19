@@ -17,6 +17,9 @@
 - Tech Stack
 
 ### Design Docs
+
+### Classes
+
 ```mermaid
 classDiagram
   class Simulator {
