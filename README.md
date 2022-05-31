@@ -18,9 +18,7 @@
 
 ### Design Docs
 
-Classes:
-
-- #TODO: User mermaid for diagram
+### Classes
 
 ```mermaid
 classDiagram
