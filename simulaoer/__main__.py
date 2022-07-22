@@ -4,8 +4,14 @@ import typer
 app = typer.Typer()
 
 
-@app.command()
-def defualt_repl():
+@app.callback(invoke_without_command=True)
+def without_command(ctx: typer.Context):
+    if ctx.invoked_subcommand is None:
+        ctx.invoke(repl)
+
+
+@app.command("repl")
+def repl():
     """
     SimulAOEr REPL
     """
@@ -17,6 +23,14 @@ def defualt_repl():
         else:
             print(f"you typed: {user_input}")
         user_input = typer.prompt(text=">>> ", prompt_suffix="")
+
+
+@app.command("info")
+def info():
+    """
+    Show info about SimulAOEr
+    """
+    typer.echo("using AOE2DE version 63482")
 
 
 if __name__ == "__main__":
