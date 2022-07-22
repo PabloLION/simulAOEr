@@ -4,6 +4,11 @@ version = "0.1.0"
 description = "A simulator for AOE2DE (Age of Empires II: Definitive Edition)"
 authors = ["PabloLION <36828324+PabloLION@users.noreply.github.com>"]
 license = "MIT"
+packages = [{ include = "simulaoer" }]
+readme = "README.md"
+
+[tool.poetry.scripts]
+saoer = "simulaoer.__main__:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
