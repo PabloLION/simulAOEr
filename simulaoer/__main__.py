@@ -1,19 +1,22 @@
 import typer
 
+
 app = typer.Typer()
 
 
 @app.command()
-def main(name: str):
-    print(f"Hello {name}")
-
-
-@app.command()
-def goodbye(name: str, formal: bool = False):
-    if formal:
-        print(f"Goodbye Ms. {name}. Have a good day.")
-    else:
-        print(f"Bye {name}!")
+def defualt_repl():
+    """
+    SimulAOEr REPL
+    """
+    typer.echo("REPL started. try '10 champion vs 10 eagles'")
+    user_input = typer.prompt(text=">>> ", prompt_suffix="")
+    while user_input != "exit":
+        if user_input == "10 champion vs 10 eagles":
+            print("10 champion")
+        else:
+            print(f"you typed: {user_input}")
+        user_input = typer.prompt(text=">>> ", prompt_suffix="")
 
 
 if __name__ == "__main__":
