@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "simulAOEr"
+version = "0.1.0"
+description = "A simulator for AOE2DE (Age of Empires II: Definitive Edition)"
+authors = ["PabloLION <36828324+PabloLION@users.noreply.github.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.6.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+black = "^22.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
