@@ -12,7 +12,7 @@ saoer = "simulaoer.__main__:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-typer = "^0.6.1"
+typer = { extras = ["all"], version = "^0.6.1" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
