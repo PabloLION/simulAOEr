@@ -28,7 +28,7 @@ def repl():
 @app.command("info")
 def info():
     """
-    Show info about SimulAOEr
+    Show info about simulAOEr
     """
     typer.echo("using AOE2DE version 63482")
 
