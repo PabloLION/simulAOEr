@@ -2,7 +2,7 @@
 
 - Simulator of AOE2:DE build for multiple players.
 - Implement some algorithm to see the best strategy for each civ / civ group strategy.
-  - Like what's the best civ combination for 2/3/4 players.
+  - what's the best civ combination for 2/3/4 players.
   - What's the best strategy for civ-s vs civ-s.
   - What's the best play style for certain civ-s on a certain map.
   - Maybe use AI, but need metrics (hard to evaluate).
