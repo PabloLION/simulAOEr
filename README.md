@@ -1,6 +1,6 @@
 # simulAOEr
 
-A simulator built for AOE2:DE
+A simulator for AOE2DE (Age of Empires II: Definitive Edition)
 
 ## Contribute
 
