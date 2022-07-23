@@ -8,7 +8,8 @@ packages = [{ include = "simulaoer" }]
 readme = "README.md"
 
 [tool.poetry.scripts]
-saoer = "simulaoer.__main__:app"
+aoe = "simulaoer.__main__:app"
+saoe = "simulaoer.__main__:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
